@@ -81,8 +81,18 @@ function theme_aai_video($video){
 	if(is_array($video)){
 		// We support YouTube and Vimeo videos
 		if($details = _aai_video_extract($video['url'])){
+			
+			$vote = '<div class="node-video-vote clear-block">';
+			$already_voted = aai_videos_limit_check($video['id'], 'vote');
+			$vote .= '<div class="vote-desc">Vote: </div>';
+			$vote .= '<div class="vote-minus vote-op">'.($already_voted ? '<span>-</span>' : l('-', 'videos/'.$video['id'].'/votedown', array('query'=>drupal_get_destination()))).'</div>';
+			$vote .= '<div class="vote-count">'.$video['vote_tally'].'</div>';
+			$vote .= '<div class="vote-plus vote-op">'.($already_voted ? '<span>+</span>' : l('+', 'videos/'.$video['id'].'/voteup', array('query'=>drupal_get_destination()))).'</div>';
+			$vote .= '</div>';
+		
 			$date = strtotime($video['created_at']);
 			$output .= '<div class="node-video node-video-'.$details['type'].'">';
+			$output .= $vote;
 			$output .= '<div class="node-video-added description">This video was added to our site on <strong>'.format_date($date, 'custom', 'M j, Y').'</strong></div>';
 			$output .= '<div class="node-video-embed">'.$details['embed'].'</div>';
 			$output .= '<div class="node-video-link">'.l($video['url'], $video['url'], array('attributes'=>array('class'=>'description'))).'</div>';
