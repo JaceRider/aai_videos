@@ -81,7 +81,9 @@ function theme_aai_video($video){
 	if(is_array($video)){
 		// We support YouTube and Vimeo videos
 		if($details = _aai_video_extract($video['url'])){
+			$date = strtotime(check_plain($video['created_at']));
 			$output .= '<div class="node-video node-video-'.$details['type'].'">';
+			$output .= '<div class="node-video-added description">This video was added to our site on <strong>'.format_date($date, 'custom', 'M j, Y').'</strong></div>';
 			$output .= '<div class="node-video-embed">'.$details['embed'].'</div>';
 			$output .= '<div class="node-video-link">'.l($video['url'], $video['url'], array('attributes'=>array('class'=>'description'))).'</div>';
 			$output .= '</div>';
