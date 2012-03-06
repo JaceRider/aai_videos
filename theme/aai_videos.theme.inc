@@ -107,6 +107,10 @@ function theme_aai_video_top10($op, $videos){
 		$header = array('Video', ucfirst($op));
 		$rows = array();
 		
+		// I believe there is an error in the API that calls for top videos by votes
+		// It treats both negative and positive numbers as equal
+		usort($videos, '_aai_sort_'.$op);
+		
 		foreach($videos as $video){
 			$row = array();
 			$row[] = l(check_plain(htmlspecialchars_decode($video['title'])), 'videos/'.$video['id'].'/view/'.$video['slug']);
@@ -172,4 +176,24 @@ function _aai_sort_name_desc($a, $b){
 	$c = strcmp($a['title'], $b['title']);
 	if($c == 0) return 0;
   return ($c > 0) ? -1 : 1;
+}
+
+/**
+ * Helper function to sort by vote count
+ */
+function _aai_sort_votes($a, $b){
+	if ($a['vote_tally'] == $b['vote_tally']) {
+        return 0;
+  }
+  return ($a['vote_tally'] > $b['vote_tally']) ? -1 : 1;
+}
+
+/**
+ * Helper function to sort by view count
+ */
+function _aai_sort_views($a, $b){
+	if ($a['view_count'] == $b['view_count']) {
+        return 0;
+  }
+  return ($a['view_count'] > $b['view_count']) ? -1 : 1;
 }
