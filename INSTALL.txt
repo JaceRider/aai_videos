@@ -1,0 +1,10 @@
+==================================================================================
+August Ash Videos Installation instructions:
+==================================================================================
+1) Go to '/admin/build/modules' and enable the modules called 'August Ash Videos'.
+
+2) Your theme should support the 'right' region. If your theme does not have that 
+   region, you should visit '/admin/build/block' and place the 'Top 10 by Views' and
+   'Top 10 by Votes' blocks where you want them to show in your theme.
+
+3) That's it! Now just visit '/videos'.
