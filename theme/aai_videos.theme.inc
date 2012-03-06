@@ -115,7 +115,7 @@ function theme_aai_video_top10($op, $videos){
 		
 		foreach($videos as $video){
 			$row = array();
-			$row[] = l(check_plain(htmlspecialchars_decode($video['title'])), 'videos/'.$video['id'].'/view/'.$video['slug']);
+			$row[] = l(htmlspecialchars_decode($video['title']), 'videos/'.$video['id'].'/view/'.$video['slug']);
 			$row[] = array('data'=>$video[$field], 'class'=>'center');			
 			$rows[] = $row;
 		}
