@@ -197,10 +197,12 @@ function aai_videos_view($id){
 function aai_videos_topten($op){
 	module_load_include('rest.inc', 'aai_videos', 'includes/aai_videos');
 	$output = '';
-
 	// Fetch cache
 	$id = 'aai_videos_topten_'.$op;
 	$cache = cache_get($id);
+	
+	// Since we don't want to run cron every 5 minutes, we check expiration here
+	if($cache->expire < time()) $cache = NULL;
 	
 	if($cache){
 		// Use cached data if found
