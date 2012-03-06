@@ -60,7 +60,7 @@ function theme_aai_video_list($videos){
 			if($allowed) $vote .= '<div class="vote-plus vote-op">'.($already_voted ? '<span>+</span>' : l('+', 'videos/'.$video['id'].'/voteup', array('query'=>drupal_get_destination()))).'</div>';
 			
 			$row[] = array('data' => $vote, 'class'=>'vote-row');
-			$row[] = l($video['title'], 'videos/'.$video['id'].'/view/'.$video['slug']);
+			$row[] = l(htmlspecialchars_decode($video['title']), 'videos/'.$video['id'].'/view/'.$video['slug']);
 			$row[] = array('data'=>check_plain($video['view_count']), 'class'=>'viewcount-row center');
 			$row[] = array('data'=>format_date($date, 'custom', 'M j, Y'), 'class'=>'added-row');
 			$rows[] = $row;
@@ -109,7 +109,7 @@ function theme_aai_video_top10($op, $videos){
 		
 		foreach($videos as $video){
 			$row = array();
-			$row[] = l($video['title'], 'videos/'.$video['id'].'/view/'.$video['slug']);
+			$row[] = l(check_plain(htmlspecialchars_decode($video['title'])), 'videos/'.$video['id'].'/view/'.$video['slug']);
 			$row[] = array('data'=>$video[$field], 'class'=>'center');			
 			$rows[] = $row;
 		}
