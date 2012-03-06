@@ -6,7 +6,6 @@ function aai_videos_block_block($op, $delta, $edit){
       $blocks = array();
       $blocks['top10votes'] = array(
         'info' => t('Top 10 by Votes'),
-        'cache' => BLOCK_CACHE_PER_ROLE,
         'visibility' => 1,
         'region' => 'right',
         'pages' => 'videos',
@@ -15,7 +14,6 @@ function aai_videos_block_block($op, $delta, $edit){
       );
       $blocks['top10views'] = array(
         'info' => t('Top 10 by Views'),
-        'cache' => BLOCK_CACHE_PER_ROLE,
         'visibility' => 1,
         'region' => 'right',
         'pages' => 'videos',
