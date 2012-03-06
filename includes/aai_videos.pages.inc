@@ -177,7 +177,7 @@ function aai_videos_view($id){
 	switch($request->getHttpCode()){
 		case 200:		
 			$video = $request->getResponseBody();
-			drupal_set_title(check_plain(htmlspecialchars_decode($video['title'])));
+			drupal_set_title(htmlspecialchars_decode($video['title']));
 			$output .= theme('aai_video', $video);
 			break;
 		case 404:

@@ -50,7 +50,7 @@ function theme_aai_video_list($videos){
       	break;
     }
 		foreach($videos as $video){
-			$date = strtotime(check_plain($video['created_at']));
+			$date = strtotime($video['created_at']);
 			$row = array();
 			
 			$vote = '';
@@ -61,7 +61,7 @@ function theme_aai_video_list($videos){
 			
 			$row[] = array('data' => $vote, 'class'=>'vote-row');
 			$row[] = l(htmlspecialchars_decode($video['title']), 'videos/'.$video['id'].'/view/'.$video['slug']);
-			$row[] = array('data'=>check_plain($video['view_count']), 'class'=>'viewcount-row center');
+			$row[] = array('data'=>$video['view_count'], 'class'=>'viewcount-row center');
 			$row[] = array('data'=>format_date($date, 'custom', 'M j, Y'), 'class'=>'added-row');
 			$rows[] = $row;
 		}
@@ -81,7 +81,7 @@ function theme_aai_video($video){
 	if(is_array($video)){
 		// We support YouTube and Vimeo videos
 		if($details = _aai_video_extract($video['url'])){
-			$date = strtotime(check_plain($video['created_at']));
+			$date = strtotime($video['created_at']);
 			$output .= '<div class="node-video node-video-'.$details['type'].'">';
 			$output .= '<div class="node-video-added description">This video was added to our site on <strong>'.format_date($date, 'custom', 'M j, Y').'</strong></div>';
 			$output .= '<div class="node-video-embed">'.$details['embed'].'</div>';
