@@ -1,0 +1,17 @@
+name = "Rayne"
+description = "Clean starter theme."
+base theme = "tao"
+core = "6.x"
+engine = "phptemplate"
+
+scripts[] = "js/rayne.js"
+stylesheets[screen][] = "css/core.css"
+stylesheets[screen][] = "css/style.css"
+stylesheets[screen][] = "css/typography.css"
+
+regions[left] = Left sidebar
+regions[right] = Right sidebar
+regions[content] = Content
+regions[header] = Header
+regions[footer] = Footer
+

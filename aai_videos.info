@@ -1,0 +1,7 @@
+name = August Ash Videos
+description = Allows employees of August Ash to view a list of submitted video links, top ten lists, and submit/rate video links.
+core = 6.x
+package = Ashen Rayne
+version = "6.x-1.0"
+core = "6.x"
+

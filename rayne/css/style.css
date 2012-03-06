@@ -1,0 +1,189 @@
+/* @group Layout */
+
+.limiter {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 220px;
+}
+
+#left {
+  margin-right: 20px;
+  float: left;
+}
+
+#right {
+  margin-left: 20px;
+  float: right;
+}
+
+.one-sidebar #content {
+  width: 700px;
+}
+
+.two-sidebars #content {
+  width: 460px;
+}
+
+.no-sidebars #content {
+  float: none;
+}
+
+.sidebar-right #content,
+.two-sidebars #content {
+  float: left;
+}
+
+.sidebar-left #content {
+  float: right;
+}
+
+/* @end */
+
+/* @group Tabs */
+
+.tabs {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+}
+
+.primary-tabs {
+  float: left;
+  height: 30px;
+  margin: 15px 0px 0px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+div.pager {
+  margin: 10px 0px 0px;
+  height: 30px;
+}
+
+.pager li,
+.primary-tabs li {
+  height: 30px;
+  position: relative;
+  background: #eee url(../images/bleeds-d7.png) 50% 0px no-repeat;
+}
+
+.pager a,
+.pager span,
+.primary-tabs a {
+  float: left;
+  text-align: center;
+  min-width: 70px;
+  padding: 5px 10px;
+  color: #333;
+  text-shadow: #fff 0px 1px 0px;
+}
+
+.pager a,
+.pager span,
+.primary-tabs a:hover {
+  color: #8e8e8f;
+}
+
+.pager a,
+.pager span {
+  min-width: 10px;
+  padding: 5px 15px;
+}
+
+.pager li:hover,
+.primary-tabs li:hover {
+  background-color: #f8f8f8;
+}
+
+.pager li:first-child,
+.primary-tabs li:first-child {
+  border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  background-position: 0% 0px;
+}
+
+.pager li:last-child,
+.primary-tabs li:last-child {
+  border-radius: 0px 5px 5px 0px;
+  -moz-border-radius: 0px 5px 5px 0px;
+  -webkit-border-radius: 0px 5px 5px 0px;
+  background-position: 100% 0px;
+}
+
+.pager li.pager-current,
+.primary-tabs li.active {
+  background-color: #7bc;
+}
+
+.pager li.pager-current span,
+.primary-tabs li.active a {
+  color: #fff;
+  text-shadow: #38a 0px 1px 0px;
+}
+
+/* Secondary tabs, nested */
+
+.secondary-tabs {
+  min-width: 100px;
+  float: left;
+  position: relative;
+  margin: 5px 5px 5px 0px;
+  font-size: 11px;
+  background: #59a url(../images/buttons.png) -800px 50% no-repeat;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.secondary-tabs:hover {
+  background: #59a;
+  opacity: .9;
+}
+
+ul.secondary-tabs li,
+ul.secondary-tabs li a {
+  background: transparent;
+  float: none;
+  height: auto;
+  text-align: left;
+}
+
+.secondary-tabs a {
+  color: #fff;
+  text-shadow: #38a 0px 1px 0px;
+  display: none;
+  padding: 0px 10px 0px 25px;
+}
+
+.secondary-tabs:hover a,
+  .secondary-tabs .active a {
+  display: block;
+}
+
+.secondary-tabs li:hover,
+.secondary-tabs li.active {
+  background: transparent;
+}
+
+.secondary-tabs a:hover {
+  background: #389 url(../images/buttons.png) -800px 50% no-repeat;
+}
+
+.secondary-tabs li:last-child a:hover {
+  border-radius: 0px 0px 3px 3px;
+  -moz-border-radius: 0px 0px 3px 3px;
+  -webkit-border-radius: 0px 0px 3px 3px;
+}
+
+.secondary-tabs li:first-child a:hover {
+  border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+}
+
+/* @end */
